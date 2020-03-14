@@ -7,21 +7,20 @@ body {
 
 header {
   margin: 0 auto;
-  background: #000;
 }
 
 header h1 {
-  width: 1000px;
-  margin: 0 auto;
-  padding: 20px 40px;
+  width: 1200px;
+  margin: 0px auto 3em;
   height: 80px;
   line-height: 80px;
-  color: #fff;
+  color: #000;
   font-size: 40px;
+  border-top: 2px solid #000;
 }
 
-.Main-title {
-  text-decoration: none;
+header h1 img{
+  padding: 30px 0 15px;
 }
 
 main {
@@ -31,45 +30,72 @@ main {
   padding-bottom: 40px;
 }
 
-.list ul {
+.menu{
+  margin: 3em auto;
+  height: 35px;
+  line-height: 35px;
+  width: 1200px;
+  position: relative;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
   list-style: none;
-  width: 1000px;
-  margin: 0 auto;
-  padding: 40px;
+}
+
+.main-list{
+  color: white;
+  background-color: #2d2d2d;
+  float: left;
+  line-height: 30px;
+  vertical-align: middle;
   text-align: center;
 }
 
-.list ul li {
-  display: inline-block;
-  margin: 3px;
-  width: 322px;
-  height: 33px;
-  line-height: 33px;
-  border: 1px solid #d1d1d1;
-  color: #000;
-  font-size: 16px;
-  text-align: center;
-}
-
-.list ul li a {
-  display: inline-block;
-  width: 322px;
-  height: 33px;
-  line-height: 33px;
-  border: 1px solid #d1d1d1;
-  color: #000;
-  font-size: 16px;
-  text-align: center;
+.menulink, .submenulink{
   text-decoration: none;
+  display: block;
+  width: 150px;
+  font-size: 12px;
+  color: white;
 }
 
-.list ul li a:hover {
-  border-color: #454545;
+.main-list:hover  .menulink{
   font-weight: bold;
+  color: red;
+  background-color: #4d4d4d;
+}
+
+.submenulink{
+  color: white;
+}
+
+.sub-list{
+  position: absolute;
+  height: 0px;
+  overflow: hidden;
+  width: 1160px;
+  background-color:  #4d4d4d;
+  left: 0;
+}
+
+.sub-list li{
+  float: left;
+  display: inline-block;
+}
+
+.main-list:hover .sub-list{
+  height: 32px;
+}
+
+.submenulink:hover{
+  color: red;
+  background-color: #dddddd;
 }
 
 h2 {
-  width: 1000px;
+  width: 1200px;
   margin: 0 auto;
   height: 35px;
   line-height: 35px;
@@ -82,7 +108,7 @@ h2 {
 .text {
   display: block;
   margin: 0 auto;
-  width: 940px;
+  width: 1140px;
   padding: 30px;
   font-size: 12px;
   color: #000;

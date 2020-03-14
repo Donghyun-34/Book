@@ -36,7 +36,7 @@
       주소: 경기도 성남시 분당구, <a href="mailto:akakak413@naver.com">E-MAIL:akakak413@naver.com</a>
     </div>
     <div class="copyright">
-      Copyright © Hong Gil Dong. All Rights Reserved.
+      Copyright © Kim Dong Hyun & Song Jun Sub. All Rights Reserved.
     </div>
   </footer>
 
