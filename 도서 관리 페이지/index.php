@@ -10,7 +10,7 @@
 <body>
   <header>
     <h1>
-      <a href="index.php"><img src="61781dec90fad1762fd4f8b8036c99b8.png" alt="Here is Aegis!!"></a>
+      <a href="index.php"><img src="./image/61781dec90fad1762fd4f8b8036c99b8.png" alt="Here is Aegis!!"></a>
     </h1>
   </header>
 
@@ -36,7 +36,7 @@
           <ul class="sub-list">
             <li><a href="#" class="submenulink">도서 검색</a></li>
             <li><a href="#" class="submenulink">도서 반납 확인</a></li>
-            <li><a href="#" class="submenulink">도서 대여 하기</a></li>
+            <li><a href="./index.php?no=3" class="submenulink">도서 대여 하기</a></li>
           </ul>
         </li>
         <li class="main-list"><a href="#" class="menulink">Photo</a></li>
@@ -50,7 +50,9 @@
     </p>
 
     <div class="text">
-
+      <?php
+        require_once("./lib/list.php");
+      ?>
     </div>
   </main>
 
