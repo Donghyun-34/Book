@@ -73,6 +73,7 @@
             <li>대여 현황 : <?= $row["state"]?></li>
           </ul>
         </div>
+        <br><br>
         <?php
       }
     ?>
