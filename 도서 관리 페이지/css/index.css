@@ -38,7 +38,7 @@ main {
   position: relative;
 }
 
-.list {
+.list, .detail_view li {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -95,7 +95,7 @@ main {
   background-color: #dddddd;
 }
 
-h2 {
+.nomal_view {
   width: 1200px;
   margin: 0 auto;
   height: 35px;
@@ -104,6 +104,23 @@ h2 {
   font-size: 20px;
   font-weight: bold;
   border-bottom: 1px solid #454545;
+}
+
+.detail_view {
+  border: 1px solid black;
+  width: 1000px;
+  margin: 0 auto 6em;
+  height: 35px;
+  line-height: 35px;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.book_image{
+  float: right;
+  margin-left: 10px;
+  clear:both;
 }
 
 .text {
@@ -149,6 +166,7 @@ h2 {
   font-weight: bold;
   margin: 0 15px;
 }
+
 footer {
   padding: 50px;
 }

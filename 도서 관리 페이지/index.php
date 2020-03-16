@@ -36,24 +36,46 @@
           <ul class="sub-list">
             <li><a href="#" class="submenulink">도서 검색</a></li>
             <li><a href="#" class="submenulink">도서 반납 확인</a></li>
-            <li><a href="./index.php?no=3" class="submenulink">도서 대여 하기</a></li>
+            <li><a href="#" class="submenulink">도서 대여 하기</a></li>
           </ul>
         </li>
         <li class="main-list"><a href="#" class="menulink">Photo</a></li>
       </ul>
     </nav>
 
-    <p>
-      <div class="title">
-        <h2>소장 도서 목록</h2>
-      </div>
-    </p>
+    <?php
+    //기본적으로 도서 목록 출력하는 부분(title_id 값이 전달되지 않은 경우)
+      if(!isset($_GET["title_id"])){
+    ?>
+        <p>
+          <div class="nomal_view">
+            <h2>소장 도서 목록</h2>
+          </div>
+        </p>
 
-    <div class="text">
-      <?php
-        require_once("./lib/list.php");
-      ?>
-    </div>
+        <div class="text">
+          <?php
+            require_once("./lib/list.php");
+          ?>
+        </div>
+    <?php
+      }
+      //title_id가 정상적으로 전달되면 해당 책에 대한 정보 출력하기.
+      else{
+        require_once("./lib/detail_view.php");
+        ?>
+        <div class="text">
+          <ul class="detail_view">
+            <li><img src="image\book_image\61781dec90fad1762fd4f8b8036c99b8.png" class="book_image">제목 : <?= $row["title"] ?></li>
+            <li>장르 : <?= $row["genre"] ?></li>
+            <li>작가 : <?php require("./lib/show_author.php") ?></li>
+            <li>줄거리 <br><?= $row["note"]?></li>
+            <li>대여 현황 : <?= $row["state"]?></li>
+          </ul>
+        </div>
+        <?php
+      }
+    ?>
   </main>
 
   <footer>

@@ -5,7 +5,7 @@
             }
 
             //mysqli_connect()함수로 커넥션 객체 생성
-            $conn = mysqli_connect("127.0.0.1", "root", "ehdgus123", "도서", "3307");
+            require_once("./db_info.php");
 
             //페이징 작업을 위한 테이블 내 전체 행 갯수 조회 쿼리
             $sqlCount = "SELECT count(*) FROM Current_book";
@@ -14,7 +14,7 @@
                 $totalRowNum = $rowCount["count(*)"];   //php는 지역 변수를 밖에서 사용 가능.
             }
 
-            $rowPerPage = 10;   //페이지당 보여줄 게시물 행의 수
+            $rowPerPage = 20;   //페이지당 보여줄 게시물 행의 수
             $begin = ($currentPage -1) * $rowPerPage;
             $sql = "SELECT title_id, title, genre, author, note, state FROM Current_book order by title_id desc limit ".$begin.",".$rowPerPage."";
             $result = mysqli_query($conn,$sql);
@@ -34,37 +34,26 @@
             ?>
                 <tr>
                     <td>
-                        <?php
-                            echo $row["title_id"];
-                        ?>
+                        <?= $row["title_id"];?>
                     </td>
                     <td>
                         <?php
-                            echo "<a href='/board_detail.php?board_no=".$row["title_id"]."'>";
+                            echo "<a href='./index.php?title_id=".$row["title_id"]."'>";
                             echo $row["title"];
                             echo "</a>";
                         ?>
                     </td>
                     <td>
-                        <?php
-                            echo $row["genre"];
-                        ?>
+                        <?= $row["genre"];?>
                     </td>
                     <td>
-                        <?php
-
-                            echo $row["author"];
-                        ?>
+                        <?php require("./lib/show_author.php") ?>
                     </td>
                     <td>
-                      <?php
-                          echo $row["note"];
-                      ?>
+                      <?= $row["note"];?>
                     </td>
                     <td>
-                      <?php
-                        echo $row["state"];
-                      ?>
+                      <?= $row["state"];?>
                     </td>
                 </tr>
             <?php
